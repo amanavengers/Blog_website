@@ -27,7 +27,7 @@ class Article(models.Model):
     date = models.DateTimeField(auto_now_add=True)
     thumbnail = models.ImageField(default='download.png', upload_to='article_thumbnail')
     author = models.ForeignKey(User, on_delete=models.CASCADE, default=None)
-    Slug = models.SlugField(max_length=200, unique=True,default='article.details')
+    Slug = models.SlugField(max_length=200, unique=True, default='article.details')
 
     # python manage.py  makemigrations
     # python manage.py migrate
@@ -36,7 +36,7 @@ class Article(models.Model):
         return self.title
 
     def snippet(self):
-        return self.body[:50] + "..."
+        return self.body[:200] + "..."
 
     def save(self, *args, **kwargs):
         if self.Slug:

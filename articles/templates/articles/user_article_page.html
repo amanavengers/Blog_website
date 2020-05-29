@@ -1,5 +1,6 @@
 {%extends 'base_template.html'%}
 {%block content%}
+<h1 class = "mb-3">Post by {{view.kwargs.username}} ({{page_obj.paginator.count}})</h1>
         {% for article in articles %}
          <article class="media content-section">
              <img class="rounded-circle article-img" src = "{{article.author.profile.image.url}}">

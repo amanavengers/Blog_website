@@ -1,12 +1,13 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from .models import Article
 from django.http.response import HttpResponse
 from django.contrib.auth.decorators import login_required
 from . import forms
 from django.shortcuts import render
 from articles.models import Article
-from django.views.generic import ListView, DetailView, CreateView, UpdateView,DeleteView
+from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
+from django.contrib.auth.models import User
 
 
 # Create your views here.
@@ -19,11 +20,6 @@ def article_list(request):
 
 
 # example of class based view (list type)
-class Post_Article_ListView(ListView):
-    model = Article
-    template_name = 'articles/article_list.html'
-    context_object_name = 'articles'
-    ordering = ['date']
 
 
 def article_detail(request, Slug):
@@ -37,6 +33,17 @@ class PostDetailView(DetailView):
     template_name = 'articles/article_detail.html'
     slug_field = 'Slug'
     slug_url_kwarg = 'Slug'
+
+
+class UserPostListView(ListView):
+    model = Article
+    template_name = 'articles/user_article_page.html'
+    context_object_name = 'articles'
+    paginate_by = 2
+
+    def get_queryset(self):
+        user = get_object_or_404(User, username=self.kwargs.get('username'))
+        return Article.objects.filter(author=user).order_by('date')
 
 
 @login_required
@@ -87,7 +94,7 @@ class PostUpdateView(UserPassesTestMixin, LoginRequiredMixin, UpdateView):
         return False
 
 
-class PostDeleteView(UserPassesTestMixin, LoginRequiredMixin,DeleteView):
+class PostDeleteView(UserPassesTestMixin, LoginRequiredMixin, DeleteView):
     model = Article
     success_url = '/'
     template_name = 'articles/article_delete.html'

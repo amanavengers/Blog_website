@@ -40,27 +40,6 @@
     </div>
   </nav>
 </header>
-
-<!--<header class = "wrapper">-->
-<!--&lt;!&ndash;    <h1><a href="{% url 'articles:list' %}"><img src=/static/download.jpeg alt="aman's_blog"/> </a></h1>&ndash;&gt;-->
-<!--    <nav>-->
-<!--        <ul>-->
-<!--            {% if user.is_authenticated %}-->
-<!--             <li>-->
-<!--                 <form class="logout-link" action="{%url 'logout'%}" method="post">-->
-<!--&lt;!&ndash;                     when we press submit type button a post request will be fired to the given url&ndash;&gt;-->
-<!--                     {%csrf_token%}-->
-<!--                     <button type="submit">Logout</button>-->
-<!--                 </form>-->
-<!--             </li>-->
-<!--            <li><a href="{% url 'articles:create' %}" class="highlight">New article</a></li>-->
-<!--            {% else %}-->
-<!--            <li><a href = "{% url 'login' %}">Login</a></li>-->
-<!--            <li><a href = "{% url 'signup' %}">Signup</a></li>-->
-<!--            {% endif %}-->
-<!--        </ul>-->
-<!--    </nav>-->
-<!--    </header>-->
 <main role="main" class="container">
   <div class="row">
     <div class="col-md-8">
@@ -73,19 +52,7 @@
       {%endif%}
       {% block content %}{% endblock %}
     </div>
-    <div class="col-md-4">
-      <div class="content-section">
-        <h3>Our Sidebar</h3>
-        <p class='text-muted'>You can put any information here you'd like.
-          <ul class="list-group">
-            <li class="list-group-item list-group-item-light">Latest Posts</li>
-            <li class="list-group-item list-group-item-light">Announcements</li>
-            <li class="list-group-item list-group-item-light">Calendars</li>
-            <li class="list-group-item list-group-item-light">etc</li>
-          </ul>
-        </p>
-      </div>
-    </div>
+
   </div>
 </main>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>

@@ -28,8 +28,8 @@ from .views import PostListView
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('about/', views.about, name="blog-about"),
-    path('articles/', include('articles.urls')),
     path('', PostListView.as_view(), name="blog-home"),
+    path('articles/', include('articles.urls')),
     path('accounts/', include('accounts.urls'), name='blog-accounts'),
     path('signup/', account_views.signup_view, name="signup"),
     path('login/', auth_views.LoginView.as_view(template_name='accounts/login.html'), name='login'),

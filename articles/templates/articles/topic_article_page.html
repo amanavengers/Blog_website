@@ -29,7 +29,7 @@
         <div class ="col-sm-2">
             </div>
         <div class ="col-sm-8">
-<h1 class = " mb-3 mt-2 ml-5">Post by {{view.kwargs.username}} ({{page_obj.paginator.count}})</h1>
+<h1 class = " mb-3 mt-2 ml-5"> {{view.kwargs.MainTopic}}</h1>
         {% for article in articles %}
          <article class="media content-section">
              <img class="rounded-circle article-img" src = "{{article.author.profile.image.url}}">

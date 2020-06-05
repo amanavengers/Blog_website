@@ -1,6 +1,11 @@
 {%extends 'base_template.html'%}
 {%load crispy_forms_tags%}
 {%block content%}
+<div class="container">
+    <div class = "row">
+        <div class ="col-sm-2">
+            </div>
+        <div class ="col-sm-8">
 <div class="content-section">
   <div class="media">
     <img class="rounded-circle account-img" src="{{user.profile.image.url}}">
@@ -20,6 +25,9 @@
     </fieldset>
     <div class = "form-group">
         <button class = "btn btn-outline-info" type = "submit">Save changes</button>
+    </div>
+</div>
+        </div>
     </div>
 </div>
 {%endblock%}

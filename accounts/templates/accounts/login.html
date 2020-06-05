@@ -1,6 +1,11 @@
 {%extends 'base_template.html'%}
 {%load crispy_forms_tags%}
 {%block content%}
+<div class="container">
+    <div class = "row">
+        <div class ="col-sm-2">
+            </div>
+        <div class ="col-sm-8">
 <div class = "content-section">
 <h1> SignIn </h1>
 <form class = "site-form" action = "{%url 'login'%}" method = "post">
@@ -20,5 +25,8 @@
             Don't Have an Account?<a class="ml-2" href="{%url 'signup'%}">Signup</a>
         </small>
     </div>
+</div>
+    </div>
+</div>
 </div>
 {%endblock%}

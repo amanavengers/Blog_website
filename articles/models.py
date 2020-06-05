@@ -28,6 +28,7 @@ class Article(models.Model):
     thumbnail = models.ImageField(default='download.png', upload_to='article_thumbnail')
     author = models.ForeignKey(User, on_delete=models.CASCADE, default=None)
     Slug = models.SlugField(max_length=200, unique=True, default='article.details')
+    MainTopic = models.CharField(max_length=100, default='Technology')
 
     # python manage.py  makemigrations
     # python manage.py migrate

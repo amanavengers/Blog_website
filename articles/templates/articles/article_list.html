@@ -1,5 +1,10 @@
 {%extends 'base_template.html'%}
 {%block content%}
+<div class="container">
+    <div class = "row">
+        <div class ="col-sm-2">
+            </div>
+        <div class ="col-sm-8">
         {% for article in articles %}
          <article class="media content-section">
              <img class="rounded-circle article-img" src = "{{article.author.profile.image.url}}">
@@ -15,6 +20,9 @@
         </div>
         </article>
         {% endfor %}
+        </div>
+    </div>
+</div>
 {%endblock%}
 
 

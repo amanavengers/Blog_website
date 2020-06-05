@@ -2,20 +2,56 @@
 <!DOCTYPE html>
 <html lang = "en">
 <head>
-     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<!--     <meta charset="utf-8">-->
+<!--    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">-->
 
-    <!-- Bootstrap CSS -->
+<!--    &lt;!&ndash; Bootstrap CSS &ndash;&gt;-->
+<!--    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">-->
+<!--&lt;!&ndash;    <link rel = "stylesheet" href = "{% static 'style.css' %}">&ndash;&gt;-->
+<!--         -->
+
+<!--    <title> Omat </title>-->
+<!--</head>-->
+ <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Jekyll v4.0.1">
+    <title>Blog Template · Bootstrap</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/blog/">
+
+    <!-- Bootstrap core CSS -->
+     <link href="../assets/dist/css/bootstrap.css" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-<!--    <link rel = "stylesheet" href = "{% static 'style.css' %}">-->
-          <link rel = "stylesheet" href = "{% static 'main.css' %}">
 
-    <title> Omat </title>
-</head>
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+    <!-- Custom styles for this template -->
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:700,900" rel="stylesheet">
+    <!-- Custom styles for this template -->
+
+    <link rel = "stylesheet" href = "{% static 'main.css' %}">
+    <link rel = "stylesheet" href = "{% static 'blog.css' %}">
+  </head>
 <body>
 <header class="site-header">
-  <nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top">
-    <div class="container ">
+  <nav class="navbar navbar-expand-md navbar-dark fixed-top" style="background-color:black;">
+    <div class="container">
       <a class="navbar-brand mr-4" href="{%url 'blog-home'%}">Aman_co</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -24,6 +60,8 @@
         <div class="navbar-nav mr-auto">
           <a class="nav-item nav-link" href="{%url 'blog-home'%}">Home</a>
           <a class="nav-item nav-link" href="{%url 'blog-about'%}">About</a>
+            <a class="nav-item nav-link" href="{%url 'articles:Topicpost' 'Technology' %}">Technology</a>
+            <a class="nav-item nav-link" href="{%url 'articles:Topicpost' 'Business' %}">Business</a>
         </div>
         <!-- Navbar Right Side -->
 
@@ -41,11 +79,9 @@
     </div>
   </nav>
 </header>
-<main role="main" class="container">
-  <div class="row">
-      <div class=" col-sm-2">
-      </div>
-    <div class=" col-sm-8 ">
+<main role="main" class="">
+<!--  <div class="row">-->
+<!--    <div class=" col-sm-6 ">-->
       {%if messages%}
       {% for message in messages %}
        <div class ="alert alert-{{ message.tags }}">
@@ -54,9 +90,9 @@
       {%endfor%}
       {%endif%}
       {% block content %}{% endblock %}
-    </div>
+<!--    </div>-->
 
-  </div>
+<!--  </div>-->
 </main>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>

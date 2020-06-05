@@ -5,7 +5,8 @@ from .views import (
     PostCreateView,
     PostUpdateView,
     PostDeleteView,
-    UserPostListView
+    UserPostListView,
+    MainTopicPostListView
 )
 
 app_name = 'articles'
@@ -14,5 +15,6 @@ urlpatterns = [
     path('<slug:Slug>/', PostDetailView.as_view(), name="detail"),
     path('<slug:Slug>/update/', PostUpdateView.as_view(), name="update"),
     path('<slug:Slug>/delete/', PostDeleteView.as_view(), name="delete"),
-    path('user/<str:username>', UserPostListView.as_view(), name="userpost")
+    path('user/<str:username>', UserPostListView.as_view(), name="userpost"),
+    path('<str:MainTopic>', MainTopicPostListView.as_view(), name="Topicpost")
 ]

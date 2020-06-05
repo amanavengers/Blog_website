@@ -1,11 +1,12 @@
 body {
-  background: #fafafa;
+  background: #f8f9fa00;
   color: #333333;
-  margin-top: 10rem;
+  margin-top: 2rem;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  color: #444444;
+  color: #212529;
+
 }
 
 ul {
@@ -29,15 +30,16 @@ ul {
 }
 
 .content-section {
-  background: #ffffff;
-  padding: 20px 20px;
-  border: 1px solid #dddddd;
-  border-radius: 3px;
-  margin-bottom: 20px;
+
+  padding: 20px;
+  border-radius: 1px;
+  margin-bottom: px;
 }
 
 .article-title {
   color: #444444;
+  margin-left: 20px;
+
 }
 
 a.article-title:hover {
@@ -50,12 +52,14 @@ a.article-title:hover {
 }
 
 .article-img {
+  margin-top: 5px;
   height: 65px;
   width: 65px;
   margin-right: 16px;
 }
 
 .article-metadata {
+  margin-top: 5px;
   padding-bottom: 1px;
   margin-bottom: 4px;
   border-bottom: 1px solid #e3e3e3
@@ -82,4 +86,11 @@ a.article-title:hover {
 .account-heading {
   font-size: 2.5rem;
 }
-
+.jumbotron{
+     background-image:url('back.jpg');
+     background-repeat:no-repeat;
+     background-size: 100% 100%;
+         }
+.bd-placeholder-img{
+background-image:url('back.jpg');
+}

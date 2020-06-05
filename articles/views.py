@@ -46,6 +46,16 @@ class UserPostListView(ListView):
         return Article.objects.filter(author=user).order_by('date')
 
 
+class MainTopicPostListView(ListView):
+    model = Article
+    template_name = 'articles/topic_article_page.html'
+    context_object_name = 'articles'
+    paginate_by = 5
+
+    def get_queryset(self):
+        return Article.objects.filter(MainTopic=self.kwargs.get('MainTopic')).order_by('date')
+
+
 @login_required
 def article_create(request):
     if request.method == "POST":
@@ -63,7 +73,7 @@ def article_create(request):
 class PostCreateView(LoginRequiredMixin, CreateView):
     model = Article
     template_name = 'articles/article_create.html'
-    fields = ['title', 'body', 'thumbnail']
+    fields = ['title', 'MainTopic', 'body', 'thumbnail']
     slug_field = 'Slug'
     slug_url_kwarg = 'Slug'
 
